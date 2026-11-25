@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KaziAccess — Digital access for everyone</title>
+  <meta name="description" content="An inclusive digital access prototype supporting different ways to read, hear, communicate and interact.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="KaziAccess home">
+      <span class="brand-mark" aria-hidden="true">K</span>
+      <span>KaziAccess</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#accessibility">Accessibility</a>
+      <a href="#tools">Tools</a>
+      <a href="#about">About</a>\n      <a href="login.html">Sign in</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">INCLUSIVE DIGITAL ACCESS</p>
+        <h1>Different abilities.<br><span>Equal access.</span></h1>
+        <p class="intro">A digital assistant that helps people access learning, employment and everyday online opportunities in the way that works best for them.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#tools">Explore tools</a>
+          <button class="button secondary" id="readIntro" type="button">Read this page aloud</button>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="KaziAccess accessibility features">
+        <div class="orbit" aria-hidden="true"></div>
+        <div class="feature-chip chip-one"><span aria-hidden="true">🔊</span> Read aloud</div>
+        <div class="feature-chip chip-two"><span aria-hidden="true">CC</span> Captions</div>
+        <div class="feature-chip chip-three"><span aria-hidden="true">⌨</span> Keyboard access</div>
+        <div class="center-symbol" aria-hidden="true">KA</div>
+      </div>
+    </section>
+
+    <section class="access-panel" id="accessibility" aria-labelledby="accessTitle">
+      <div>
+        <p class="eyebrow">MAKE IT COMFORTABLE</p>
+        <h2 id="accessTitle">Your access settings</h2>
+        <p class="muted">Choose the settings that help you. You can change them at any time.</p>
+      </div>
+      <div class="settings-grid">
+        <label class="setting">
+          <span><strong>Large text</strong><small>Make text easier to read</small></span>
+          <input type="checkbox" id="largeText">
+        </label>
+        <label class="setting">
+          <span><strong>High contrast</strong><small>Increase visual contrast</small></span>
+          <input type="checkbox" id="highContrast">
+        </label>
+        <label class="setting">
+          <span><strong>Reduce motion</strong><small>Reduce decorative movement</small></span>
+          <input type="checkbox" id="reduceMotion">
+        </label>
+        <label class="setting">
+          <span><strong>Read aloud</strong><small>Use text-to-speech when available</small></span>
+          <input type="checkbox" id="readAloud">
+        </label>
+      </div>
+      <div class="settings-actions">
+        <button class="button secondary" id="stopReading" type="button">Stop speech</button>
+        <button class="button text-button" id="resetSettings" type="button">Reset settings</button>
+        <p id="settingsStatus" class="status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="tools-section" id="tools" aria-labelledby="toolsTitle">
+      <p class="eyebrow">ACCESSIBLE BY DESIGN</p>
+      <h2 id="toolsTitle">What would you like help with?</h2>
+      <p class="muted">These are prototype tools. More features will be added after testing with users.</p>
+      <div class="tool-grid">
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">Aa</div>
+          <h3>Understand information</h3>
+          <p>Turn difficult text into clearer, shorter language.</p>
+          <a href="#simplifier">Try text simplifier <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">🔊</div>
+          <h3>Listen to text</h3>
+          <p>Hear written information using your browser's speech feature.</p>
+          <button class="inline-action" id="listenSample" type="button">Listen to a sample <span aria-hidden="true">→</span></button>
+        </article>
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">🎙</div>
+          <h3>Speak to type</h3>
+          <p>Use speech recognition, when supported, to dictate text.</p>
+          <a href="#voice">Try voice input <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="tool-card">
+          <div class="tool-icon" aria-hidden="true">♿</div>
+          <h3>Access opportunities</h3>
+          <p>Get support understanding a job advert and preparing an application.</p>
+          <a href="#job-helper">Job application helper <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="demo-section" id="simplifier" aria-labelledby="simplifierTitle">
+      <div class="demo-heading">
+        <p class="eyebrow">PROTOTYPE TOOL</p>
+        <h2 id="simplifierTitle">Text simplifier</h2>
+        <p class="muted">This first demo uses a simple local example. AI-powered rewriting will be connected securely in a later step.</p>
+      </div>
+      <label for="textInput" class="field-label">Text you want to understand</label>
+      <textarea id="textInput" rows="4" placeholder="Paste a sentence or paragraph here...">Applicants are required to submit their supporting documentation before the stated deadline.</textarea>
+      <div class="form-actions">
+        <button class="button primary" id="simplifyText" type="button">Make it simpler</button>
+        <button class="button secondary" id="clearText" type="button">Clear</button>
+      </div>
+      <div class="result-box" aria-labelledby="resultTitle">
+        <h3 id="resultTitle">Simpler version</h3>
+        <p id="simplifiedOutput" aria-live="polite">Your simpler text will appear here.</p>
+        <button class="inline-action" id="readResult" type="button">Read result aloud</button>
+      </div>
+    </section>
+
+    <section class="demo-section two-column" id="voice" aria-labelledby="voiceTitle">
+      <div>
+        <p class="eyebrow">VOICE INPUT DEMO</p>
+        <h2 id="voiceTitle">Speak to type</h2>
+        <p class="muted">If your browser supports speech recognition, you can dictate into the box. Speech recognition may require internet access and permission.</p>
+        <button class="button primary" id="startVoice" type="button">Start voice input</button>
+        <button class="button secondary" id="stopVoice" type="button">Stop</button>
+        <p id="voiceStatus" class="status" role="status" aria-live="polite">Voice input is ready.</p>
+      </div>
+      <div>
+        <label for="voiceOutput" class="field-label">Your dictated text</label>
+        <textarea id="voiceOutput" rows="6" placeholder="Your speech will appear here. You can also type..."></textarea>
+      </div>
+    </section>
+
+    <section class="demo-section" id="job-helper" aria-labelledby="jobTitle">
+      <p class="eyebrow">EMPLOYMENT SUPPORT</p>
+      <h2 id="jobTitle">Understand a job advert</h2>
+      <p class="muted">Paste a job requirement and use the local demo to create a short checklist.</p>
+      <label for="jobInput" class="field-label">Job advert or requirement</label>
+      <textarea id="jobInput" rows="4" placeholder="Paste job requirements here..."></textarea>
+      <button class="button primary" id="makeChecklist" type="button">Create checklist</button>
+      <div class="result-box">
+        <h3>Application checklist</h3>
+        <ul id="jobChecklist" aria-live="polite"><li>Your checklist will appear here.</li></ul>
+      </div>
+    </section>
+
+    <section class="closing" id="about">
+      <p class="eyebrow">OUR PURPOSE</p>
+      <h2>Technology should open doors, not create barriers.</h2>
+      <p>KaziAccess is an early prototype. We will develop it with feedback from blind, deaf, hard-of-hearing, physically disabled and neurodivergent users.</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> KaziAccess</span>
+    <span>Inclusive digital access • Prototype</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

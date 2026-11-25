@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <style>html.auth-checking body > *:not(script) { visibility: hidden !important; } html.auth-checking body::before { content: "Checking your sign-in…"; visibility: visible; position: fixed; inset: 0; display: grid; place-items: center; padding: 2rem; background: #f7f9fc; color: #14213d; font: 600 1.1rem system-ui, sans-serif; z-index: 9999; }</style>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Your KaziAccess accessible workspace.">
+  <title>My workspace — KaziAccess</title><link rel="stylesheet" href="login.css"><link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to dashboard</a>
+  <header class="masthead"><a class="brand" href="index.html" aria-label="KaziAccess home"><span class="brand-mark" aria-hidden="true">K</span><span>KaziAccess</span></a><p>Different abilities. Equal access.</p></header>
+  <nav class="nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#tools">Tools</a><button class="nav-button" id="signOutButton" type="button">Sign out</button></nav>
+  <main id="main" class="dashboard-main">
+    <section class="welcome-panel" aria-labelledby="welcomeTitle">
+      <p class="eyebrow">MY WORKSPACE</p><h1 id="welcomeTitle">Welcome to KaziAccess</h1>
+      <p id="accountEmail" class="intro" aria-live="polite">Loading your account…</p>
+      <p id="verificationStatus" class="status-note" role="status"></p>
+      <a class="button primary link-button" href="index.html#tools">Explore accessible tools</a>
+    </section>
+    <section class="settings-panel" aria-labelledby="settingsTitle">
+      <h2 id="settingsTitle">Accessibility preferences</h2>
+      <p>Choose settings that make this workspace easier to use. Your choices are saved to your KaziAccess account and can follow you to another device.</p>
+      <div class="preference-list">
+        <label class="preference"><input type="checkbox" id="prefLargeText"><span><strong>Larger text</strong><small>Increase text size for easier reading.</small></span></label>
+        <label class="preference"><input type="checkbox" id="prefHighContrast"><span><strong>High contrast</strong><small>Increase contrast between text and background.</small></span></label>
+        <label class="preference"><input type="checkbox" id="prefReduceMotion"><span><strong>Reduce motion</strong><small>Reduce unnecessary movement and animation.</small></span></label>
+        <label class="preference"><input type="checkbox" id="prefReadAloud"><span><strong>Read-aloud preference</strong><small>Prefer spoken instructions when available.</small></span></label>
+      </div>
+      <p class="form-message" id="saveMessage" role="status" aria-live="polite"></p>
+    </section>
+
+<section class="settings-panel" aria-labelledby="profileTitle">
+  <h2 id="profileTitle">My applicant profile</h2>
+  <p>Save your qualifications and skills to make job application preparation easier.</p>
+
+  <form id="profileForm">
+    <label for="profileQualification">Highest qualification</label>
+    <input
+      type="text"
+      id="profileQualification"
+      placeholder="e.g. Diploma in Information Technology"
+    >
+
+    <label for="profileSkills">My skills</label>
+    <textarea
+      id="profileSkills"
+      rows="4"
+      placeholder="e.g. Networking, troubleshooting, communication, Excel"
+    ></textarea>
+
+    <label for="profileExperience">Work experience</label>
+    <textarea
+      id="profileExperience"
+      rows="4"
+      placeholder="Describe your work experience, internships or practical projects."
+    ></textarea>
+
+    <label for="profileCareerGoal">Preferred job or career area</label>
+    <input
+      type="text"
+      id="profileCareerGoal"
+      placeholder="e.g. IT Support, Cybersecurity"
+    >
+
+    <button class="button primary" type="submit" id="saveProfile">
+      Save my profile
+    </button>
+
+    <p id="profileMessage" class="form-message" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
+<section
+  class="settings-panel"
+  id="jobMatchingAssistant"
+  aria-labelledby="matchingTitle"
+>
+  <h2 id="matchingTitle">Job Matching Assistant</h2>
+
+  <p>
+    Paste a job advertisement below. KaziAccess will compare its
+    requirements with your saved applicant profile.
+  </p>
+
+  <label for="matchingJobAdvert">Job advertisement</label>
+  <textarea
+    id="matchingJobAdvert"
+    rows="9"
+    placeholder="Paste the complete job advertisement here..."
+  ></textarea>
+
+  <button class="button primary" type="button" id="matchJobButton">
+    Compare my profile with this job
+  </button>
+
+
+<div id="matchingResults" role="status" aria-live="polite"></div>
+</section>
+
+<section class="dashboard-section">
+  <h2>Change account email</h2>
+  <p>Enter your current password and the new email address you can access.</p>
+
+  <form id="emailChangeForm">
+    <label for="currentPassword">Current password</label>
+    <input
+      id="currentPassword"
+      type="password"
+      autocomplete="off"
+      required
+    />
+
+    <label for="newEmail">New email address</label>
+    <input
+      id="newEmail"
+      type="email"
+      autocomplete="off"
+      required
+    />
+
+    <button id="changeEmailButton" type="submit">
+      Verify new email
+    </button>
+
+    <p id="emailChangeMessage" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
+
+
+    <section class="next-panel" aria-labelledby="nextTitle"><h2 id="nextTitle">What comes next?</h2><p>Your account sign-in is connected. Next we can add a personal profile, save preferences securely across devices, and build the job, learning and entrepreneurship workspace.</p></section>
+  </main>
+  <footer><span>© <span id="year"></span> KaziAccess</span><span>Different abilities. Equal access.</span></footer>
+  
+<section class="dashboard-section" id="applicationTracker">
+  <h2>My Job Applications</h2>
+  <p>Track your job applications and interviews.</p>
+
+  <form id="applicationForm">
+    <label for="applicationJobTitle">Job title</label>
+    <input id="applicationJobTitle" type="text" required>
+
+    <label for="applicationCompany">Company</label>
+    <input id="applicationCompany" type="text" required>
+
+    <label for="applicationDate">Application date</label>
+    <input id="applicationDate" type="date" required>
+
+    <label for="applicationStatus">Status</label>
+    <select id="applicationStatus" required>
+      <option value="Applied">Applied</option>
+      <option value="Shortlisted">Shortlisted</option>
+      <option value="Interview">Interview</option>
+      <option value="Offer">Offer received</option>
+      <option value="Rejected">Not selected</option>
+    </select>
+
+    <label for="applicationNotes">Notes (optional)</label>
+    <textarea id="applicationNotes" rows="3"></textarea>
+
+    <button id="saveApplicationButton" type="submit">
+      Save application
+    </button>
+
+    <p id="applicationMessage" role="status" aria-live="polite"></p>
+  </form>
+
+  <h3>Saved applications</h3>
+
+<div id="applicationSummary" aria-live="polite"></div>
+
+<label for="applicationFilter">Filter applications by status</label>
+<select id="applicationFilter">
+  <option value="All">All applications</option>
+  <option value="Applied">Applied</option>
+  <option value="Shortlisted">Shortlisted</option>
+  <option value="Interview">Interview</option>
+  <option value="Offer">Offer received</option>
+  <option value="Rejected">Not selected</option>
+</select>
+
+  <div id="applicationList" aria-live="polite"></div>
+</section>
+
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>

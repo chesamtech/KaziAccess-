@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create a KaziAccess account or sign in to your accessible digital workspace.">
+  <title>Sign in or create account — KaziAccess</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to account form</a>
+  <header class="masthead">
+    <a class="brand" href="index.html" aria-label="KaziAccess home"><span class="brand-mark" aria-hidden="true">K</span><span>KaziAccess</span></a>
+    <p>Accessible digital access</p>
+  </header>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html">Home</a><a href="index.html#tools">Tools</a><a href="index.html#accessibility">Accessibility</a>
+  </nav>
+  <main id="main">
+    <section class="login-wrap" aria-labelledby="loginTitle">
+      <p class="eyebrow">YOUR ACCESSIBLE WORKSPACE</p>
+      <h1 id="loginTitle">Welcome to KaziAccess</h1>
+      <p class="intro">Create an account or sign in to continue.</p>
+      <div class="mode-switch" role="group" aria-label="Choose account action">
+        <button type="button" class="mode-button active" id="showSignIn" aria-pressed="true">Sign in</button>
+        <button type="button" class="mode-button" id="showSignUp" aria-pressed="false">Create account</button>
+      </div>
+      <form id="authForm" novalidate>
+        <div class="field" id="nameField" hidden>
+          <label for="fullName">Your name</label>
+          <input id="fullName" name="fullName" type="text" autocomplete="name" maxlength="80">
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" minlength="6" required>
+          <p class="hint" id="passwordHint">Enter your KaziAccess password.</p>
+        </div>
+        <div class="field" id="confirmField" hidden>
+          <label for="confirmPassword">Confirm password</label>
+          <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" minlength="6">
+        </div>
+        <button class="button primary" id="submitButton" type="submit">Sign in</button>
+        <button class="button secondary" id="resetPassword" type="button">Forgot password?</button>
+        <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+      </form>
+      <p class="demo-notice"><strong>Privacy:</strong> Your password is handled by Firebase Authentication. KaziAccess does not display or store your password.</p>
+      <p class="back-link"><a href="index.html">← Back to KaziAccess homepage</a></p>
+    </section>
+  </main>
+  <footer><span>© <span id="year"></span> KaziAccess</span><span>Different abilities. Equal access.</span></footer>
+  <script type="module" src="login.js"></script>
+</body>
+</html>

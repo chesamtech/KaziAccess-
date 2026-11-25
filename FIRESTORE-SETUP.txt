@@ -1,0 +1,23 @@
+KaziAccess — Firestore accessibility preferences
+
+1. In Firebase Console, open project: kazi-acces.
+2. Open Build > Firestore Database.
+3. If Firestore has not been created, choose Create database and complete setup.
+   For a real deployment, use production mode; do not leave test mode enabled.
+4. Open the Rules tab, replace the rules with the contents of firestore.rules,
+   then click Publish.
+5. In your extracted KaziAccess project folder, replace the existing files with
+   the updated files from this package. The package contains the complete project.
+6. Run the site through VS Code Live Server (or your normal web host), sign in,
+   and change one accessibility preference.
+7. Confirm the message says "Saved to your KaziAccess account."
+
+Cross-device test:
+- Sign out on this device.
+- Sign in to the same account on another device/browser.
+- Open the dashboard and confirm the same preferences load.
+
+Security:
+- The rules restrict each /users/{uid} document to the matching signed-in user.
+- Do not use Firestore test mode for a public deployment.
+- This prototype stores accessibility preferences only; it does not store passwords.
